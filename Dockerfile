@@ -7,9 +7,8 @@ WORKDIR /opt/extension-pack
 ADD example_pack example_pack
 COPY environment.yml .
 COPY requirements.txt .
-COPY dist/kodexa.json .
 RUN apt update \
-    && conda env update -f environment.yml -n base && pip install -r requirements.txt
+    && conda env update -f environment.yml -n base && pip install -r requirements.txt && kodexa package
 
 # Make RUN commands use the new environment:
 SHELL ["/opt/conda/bin/conda", "run", "-n", "base", "/bin/bash", "-c"]
