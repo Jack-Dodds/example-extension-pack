@@ -1,0 +1,54 @@
+---
+name: Example Extension
+slug: example-extension
+description: An example starting point for an extension pack
+type: extensionPack
+
+source:
+  type: docker
+  location: 045323014350.dkr.ecr.us-east-1.amazonaws.com/kodexa-extensions/extension-core:{version}
+
+services:
+  - slug: example-assistant
+    description: '
+    An example of an assistant
+    '
+    fullDescription: '
+
+    Coming soon.
+
+    '
+    name: Example Assistant
+    type: assistant
+    assistant:
+      package: example_pack
+      class: ExampleAssistant
+    reactive: true
+#    schedulable: true
+#    defaultSchedules:
+#      - type: cron
+#        cronExpression: "0 0/1 * * * ?"
+    options:
+      - name: my_param
+        label: Example Parameter
+        required: true
+        type: string
+        description: This is an example
+  - slug: example-action
+    type: action
+    name: Example Action
+    description: An example of an action
+    readme: ''
+    step:
+      package: extension_pack
+      class: ExampleStep
+    metadata:
+      requiresSource: false
+      tags:
+        - Extract
+        - Tag
+      options:
+        - name: example_option
+          required: true
+          type: string
+          description: An example of an option

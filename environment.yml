@@ -1,0 +1,4 @@
+name: kodexa_example_extension
+dependencies:
+  - python=3.9
+  - pip
