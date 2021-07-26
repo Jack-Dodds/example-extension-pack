@@ -7,6 +7,8 @@ WORKDIR /opt/extension-pack
 ADD example_pack example_pack
 COPY environment.yml .
 COPY requirements.txt .
+COPY kodexa.yml .
+
 RUN apt update \
     && conda env update -f environment.yml -n base && pip install -r requirements.txt && kodexa package
 
