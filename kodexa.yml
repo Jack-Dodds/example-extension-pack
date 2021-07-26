@@ -6,7 +6,7 @@ type: extensionPack
 
 source:
   type: docker
-  location: 045323014350.dkr.ecr.us-east-1.amazonaws.com/kodexa-extensions/extension-core:{version}
+  location: docker.io/kodexa/example-extension:latest
 
 services:
   - slug: example-assistant
